@@ -3,7 +3,7 @@ Summary(pl):	mrxvt - emulator terminala dla X Window System
 Summary(pt_BR):	Um emulador de vt102 colorido
 Name:		mrxvt
 Version:	0.3.11
-Release:	1.3
+Release:	1.5
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/materm/%{name}-%{version}.tar.gz
@@ -47,6 +47,7 @@ export LDFLAGS="%{rpmldflags} -lutempter -L%{_libdir}"
 export CFLAGS="%{rpmcflags}"
 
 %configure \
+	%{?debug:--enable-debug} \
 	--enable-rxvt-scroll \
 	--enable-next-scroll \
 	--enable-xterm-scroll \
@@ -64,8 +65,7 @@ export CFLAGS="%{rpmcflags}"
 	--enable-shared \
 	--enable-keepscrolling \
 	--enable-xft \
-	--enable-xgetdefault \
-	--enable-xgetdefault \
+	--disable-xgetdefault \
 	--enable-menubar \
 	--enable-backspace-key \
 	--enable-delete-key \
