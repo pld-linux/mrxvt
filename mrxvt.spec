@@ -3,7 +3,7 @@ Summary(pl):	mrxvt - emulator terminala dla X Window System
 Summary(pt_BR):	Um emulador de vt102 colorido
 Name:		mrxvt
 Version:	0.3.11
-Release:	1
+Release:	1.3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/materm/%{name}-%{version}.tar.gz
@@ -43,8 +43,9 @@ Mrxvt NIE wymaga ¶rodowiska KDE ani GNOME.
 %setup -q
 
 %build
-LDFLAGS="%{rpmldflags} -lutempter -L%{_libdir}"
-export LDFLAGS
+export LDFLAGS="%{rpmldflags} -lutempter -L%{_libdir}"
+export CFLAGS="%{rpmcflags}"
+
 %configure \
 	--enable-rxvt-scroll \
 	--enable-next-scroll \
@@ -65,16 +66,15 @@ export LDFLAGS
 	--enable-xft \
 	--enable-xgetdefault \
 	--enable-xgetdefault \
-	--enable-xft \
 	--enable-menubar \
 	--enable-backspace-key \
 	--enable-delete-key \
 	--enable-resources  \
 	--enable-swapscreen
 
-CFLAGS="%{rpmcflags}"
 
 %{__make}
+%{__cc} $CFLAGS doc/settitle.c -o settitle
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -85,6 +85,7 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+install settitle $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -92,8 +93,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README README.configure FAQ AUTHORS TODO
-%doc doc/README.* doc/TIPS doc/xdefaults-sample.txt doc/xterm.seq
+%doc doc/README.* doc/TIPS doc/xdefaults-sample.txt doc/xterm.seq doc/menu
 %attr(755,root,root) %{_bindir}/%{name}
+%attr(755,root,root) %{_bindir}/settitle
 %{_mandir}/man1/%{name}.1*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
+%{_pixmapsdir}/%{name}-csh.png
+%{_pixmapsdir}/%{name}-root.png
