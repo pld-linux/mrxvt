@@ -46,7 +46,6 @@ Mrxvt NIE wymaga ¶rodowiska KDE ani GNOME.
 LDFLAGS="%{rpmldflags} -lutempter -L%{_libdir}"
 export LDFLAGS
 %configure \
-	--enable-everything \
 	--enable-rxvt-scroll \
 	--enable-next-scroll \
 	--enable-xterm-scroll \
