@@ -21,13 +21,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Mrxvt is a multi-tabbed color vt102 terminal emulator for X Window
-system. It features multi-tab support, fast pseudo-transparent
+System. It features multi-tab support, fast pseudo-transparent
 background, user supplied XPM/JPEG/PNG images for background, tinting,
 off-focus fading, text shadow, NeXT/Rxvt/Xterm/SGI/Plain style
 scrollbars, XIM and multi-languages (Chinese/Korea/Japanese), and
 logging.
 
 Mrxvt does NOT require KDE or GNOME desktop environment.
+
+%description -l pl
+Mrxvt to wielozak³adkowy emulator terminala kolorowego vt102 dla X
+Window System. Obs³uguje wiele zak³adek, szybkie pseudoprzezroczyste
+t³o, wy¶wietlanie wybranych przez u¿ytkownika obrazków XPM/JPEG/PNG
+jako t³o, cieniowanie, wygaszanie przy utracie "focusu", cienie
+tekstu, paski przewijania w stylu NeXT/Rxvt/Xterm/SGI/Plain, XIM i
+wiele jêzyków (chiñski/koreañski/japoñski) oraz logowanie.
+
+Mrxvt NIE wymaga ¶rodowiska KDE ani GNOME.
 
 %prep
 %setup -q
