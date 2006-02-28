@@ -7,7 +7,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/materm/%{name}-%{version}.tar.gz
-# Source0-md5:	bd41f496e11d2a318e2fa59aca056793	
+# Source0-md5:	bd41f496e11d2a318e2fa59aca056793
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://materm.sourceforge.net/
