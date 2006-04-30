@@ -2,12 +2,12 @@ Summary:	mrxvt - tabbed terminal emulator in an X Window System
 Summary(pl):	mrxvt - emulator terminala dla X Window System
 Summary(pt_BR):	Um emulador de vt102 colorido
 Name:		mrxvt
-Version:	0.4.1
+Version:	0.5.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/materm/%{name}-%{version}.tar.gz
-# Source0-md5:	bd41f496e11d2a318e2fa59aca056793
+# Source0-md5:	ee0e6f5d7afaddfd399ae174f6adfcef
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://materm.sourceforge.net/
@@ -74,7 +74,7 @@ export CFLAGS="%{rpmcflags}"
 
 
 %{__make}
-%{__cc} $CFLAGS doc/settitle.c -o settitle
+%{__cc} $CFLAGS share/scripts/settitle.c -o settitle
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -93,9 +93,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README README.configure FAQ AUTHORS NEWS TODO
-%doc doc/README.* doc/TIPS doc/xdefaults-sample.txt doc/xterm.seq doc/menu
+%doc doc/README.*
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/settitle
+%{_sysconfdir}/mrxvt
 %{_mandir}/man1/%{name}.1*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
