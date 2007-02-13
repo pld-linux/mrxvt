@@ -1,6 +1,6 @@
 Summary:	mrxvt - tabbed terminal emulator in an X Window System
-Summary(pl.UTF-8):   mrxvt - emulator terminala dla X Window System
-Summary(pt_BR.UTF-8):   Um emulador de vt102 colorido
+Summary(pl.UTF-8):	mrxvt - emulator terminala dla X Window System
+Summary(pt_BR.UTF-8):	Um emulador de vt102 colorido
 Name:		mrxvt
 Version:	0.5.0
 Release:	1
