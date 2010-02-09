@@ -15,6 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	utempter-devel
+BuildRequires:	xorg-lib-libX11-devel
 Requires:	terminfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
