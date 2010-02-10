@@ -11,7 +11,6 @@ Source0:	http://dl.sourceforge.net/materm/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://materm.sourceforge.net/
-BuildRequires:	autoconf
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	utempter-devel
