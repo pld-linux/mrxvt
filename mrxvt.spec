@@ -3,13 +3,14 @@ Summary(pl.UTF-8):	mrxvt - emulator terminala dla X Window System
 Summary(pt_BR.UTF-8):	Um emulador de vt102 colorido
 Name:		mrxvt
 Version:	0.5.4
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/materm/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/materm/%{name}-%{version}.tar.gz
 # Source0-md5:	0232c8868484751dcb931a28f0756f69
 Source1:	%{name}.desktop
 Source2:	%{name}.png
+Patch0:		%{name}-xkill.patch
 URL:		http://materm.sourceforge.net/
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
@@ -40,6 +41,7 @@ Mrxvt NIE wymaga środowiska KDE ani GNOME.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 export LDFLAGS="%{rpmldflags} -lutempter -L%{_libdir}"
