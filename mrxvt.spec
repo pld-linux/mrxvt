@@ -41,7 +41,7 @@ Mrxvt NIE wymaga środowiska KDE ani GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 export LDFLAGS="%{rpmldflags} -lutempter -L%{_libdir}"
